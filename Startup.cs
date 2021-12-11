@@ -35,7 +35,7 @@ namespace SampleEfCore
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SampleEfCore", Version = "v1" });
             });
             services.AddDbContext<BloggingContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("BloggingContext")));
+            options.UseNpgsql("Host=localhost;Database=sample;Username=postgres;Password=postgres"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

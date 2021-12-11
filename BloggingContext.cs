@@ -10,6 +10,11 @@ namespace ConsoleApp.PostgreSQL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql("Host=localhost;Database=sample;Username=postgres;Password=postgres");
+
+        public BloggingContext(DbContextOptions<BloggingContext> options)
+    : base(options)
+        { }
+
     }
 
     public class Blog
